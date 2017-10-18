@@ -4,6 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@user_listings = @user.listings.order("updated_at DESC")
+    @user_listings = @user.listings
   end
 end

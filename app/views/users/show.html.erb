@@ -12,8 +12,13 @@
         <div class="user-name">
           <h1><%= @user.name %></h1>
         </div>
-        </div>
+      </div>
     </div><br />
-</div>
+  </div>
+  <% if current_user == @user %>
+    <%= link_to 'Add a new product', new_listing_path, class: "btn btn-default" %><br /><br />
+  <% end %>
+  <h2 style="text-align:center">Available Products</h2>
+  <%= render 'listings/listing', obj: @user_listings %> 
 </div>
 

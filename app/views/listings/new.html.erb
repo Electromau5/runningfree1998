@@ -1,0 +1,38 @@
+<div class = "container">
+	<h1 style="text-align:center">Awwwww YEAH!!!!</h1>
+		<p style='text-align:center'>Add a new Product</p>
+			<div class='jumbotron'>
+				<%= render 'shared/errors', obj: @listing %>
+					<%= form_for @listing do |l| %>
+						<div class = "row">
+							<div class = "col-md-6 col-xs-12">
+
+								<%= l.label :name, 'Name (Maximum 75 Characters)' %><br />
+								<%= l.text_field :name, placeholder: 'Keep it simple...', class: "form-control" %><br />
+
+								<%= l.label :description, 'Description' %>
+								<%= l.text_area :description, placeholder: 'Keep it simple.....', class: "form-control" %><br />
+
+								<%= l.label :price, 'Price' %>
+								<%= l.text_field :price, placeholder: 'Keep it simple.....', class: "form-control" %><br />
+
+								<h2>PRODUCT IMAGES</h2>
+
+								<%= l.label :image %>
+								<%= l.file_field :image, class: "form-control"%><br />
+
+								<%= l.label :image2 %>
+								<%= l.file_field :image2, class: "form-control"%><br />
+
+								<%= l.label :image3 %>
+								<%= l.file_field :image3, class: "form-control"%><br />
+								
+								<%= l.submit 'CREATE', class: 'btn btn-default btn-lg'  %>
+								<% if user_signed_in? %>
+									<%= link_to 'CANCEL', user_path(current_user), class: 'btn btn-default btn-lg' %><br />
+								<% end %>
+							</div>
+						</div><br />
+					<% end %>
+			</div>
+</div><br />

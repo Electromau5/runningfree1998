@@ -1,0 +1,46 @@
+<div itemprop="product" itemscope itemtype="http://schema.org/Product">
+	<div class = "container">
+		<div class = "jumbotron"style="background-color:#fff;border-radius:5px;border:3px solid #000">
+			<div class = "row">
+				<div class = "col-md-6">
+					<%= image_tag @listing.image.url(:medium) %> <br /><br /><br />
+					<div class ="row">
+						<div class = "col-md-12 col-xs-12">
+							<div id="gallery">
+								<%= link_to image_tag(@listing.image.url(:thumb)), '#', data: { image: @listing.image.url(:medium), zoom_image: @listing.image.url(:large) }, :class => 'zoom2' %>
+								<%= link_to image_tag(@listing.image2.url(:thumb)), '#', data: { image: @listing.image2.url(:medium), zoom_image: @listing.image2.url(:large) }, :class => 'zoom2' %>
+								<%= link_to image_tag(@listing.image3.url(:thumb)), '#', data: { image: @listing.image3.url(:medium), zoom_image: @listing.image3.url(:large) }, :class => 'zoom2' %>
+							</div>
+						</div>
+					</div>		
+				</div>		
+					<div class = "col-md-6">
+						<div class = "listing_set_1">
+							<div class="title" style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">
+									Name: <br/>
+							</div>
+							<div class="fill">
+								<span itemprop="name">
+									<%= @listing.name %>
+								</span>		
+							</div>
+						</div>
+
+							<% if @listing.description? %>
+								<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Description:</h4>
+							<% end %>
+							<div class="des" style="font-family:'Lato-Light', sans-serif'"> 
+								<span itemprop="description"><%= @listing.description %></span><br><br>
+							</div>
+							<h4 style="font-family: 'Lato-Medium', sans-serif; font-size: 20px; font-weight: bold">Price:</h4>
+							<div class="des" style="font-family:'Lato-Light', sans-serif'"> 
+								<span itemprop="price">$<%= @listing.price %></span><br><br>
+							</div>	
+			</div>
+		</div>
+	</div>
+
+
+		
+
+		

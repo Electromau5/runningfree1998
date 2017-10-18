@@ -4,3 +4,28 @@
 		<h1 class = "banner-text-1">Make your college life more affordable - Buy and Sell to other students</h1>
 	</div>
 </div>
+<div class = "container-fluid">
+  <h2 class="product-list-header" style="text-align:center">NEW PRODUCTS</h2>
+    <div class = "row" id="grid">
+      <% @listings.each do |listing| %>
+        <div class = "col-xs-6 col-md-3" id="listing-box">
+          <div class = "thumbnail"style="padding:6px">
+           <%= link_to image_tag(listing.image.url(:medium)), listing %>
+          </div>
+          <div class="jumbotron"style="background-color:#fff;border:1px solid #DDDDDD;padding:0px;margin-top:-21px">
+            <div class = "listing_name">
+              <span itemprop="name">
+                <%= truncate(listing.name, length: 100) %>
+              </span>
+            </div>
+            <div class="seller-listing">
+              by<br />
+              <span itemprop="manufacturer">
+              </span>
+            </div><br>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
+</div>

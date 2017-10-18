@@ -1,0 +1,18 @@
+<div itemprop="product" itemscope itemtype="http://schema.org/Product">
+  <div class = "container-fluid">
+    <div class = "row" id="grid">
+      <% obj.each do |listing| %>
+          <div class = "col-xs-6 col-md-3" id="listing-box">
+            <div class = "thumbnail"style="padding:6px">
+              <span itemprop="image"><%= link_to image_tag(listing.image.url(:medium)), listing %></span>
+              <% if user_signed_in? %>
+                    <div class = "listing_name">
+                      <span itemprop="name"><%= truncate(listing.name, length: 100) %></span>
+                    </div>
+              <% end %>
+            </div>
+         </div>
+        <% end %>
+    </div>
+  </div>
+</div>
